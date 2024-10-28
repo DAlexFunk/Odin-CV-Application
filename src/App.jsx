@@ -9,6 +9,7 @@ function App() {
     lastName: "",
     email: "",
     phoneNumber: "",
+    education: [{name: "", graduation: "", degree: "", id: 0}]
   });
 
   return (
@@ -16,6 +17,7 @@ function App() {
       <h1>
         {formInfo.firstName} {formInfo.lastName} {formInfo.phoneNumber} {formInfo.email}
       </h1>
+      <h1>{formInfo.education[0].name}</h1>
       <Form formInfo={formInfo} formChange={setFormInfo} />
     </StrictMode>
   );
