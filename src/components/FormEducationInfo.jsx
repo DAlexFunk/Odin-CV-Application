@@ -87,7 +87,7 @@ function EducationItem({ formInfo, formChange, id }) {
 
       <button
         className="deleteEducation"
-        onClick={(evt) => {
+        onClick={() => {
           if (formInfo.education.length > 1) {
             const newEducation = [...formInfo.education];
             newEducation.splice(index, 1);

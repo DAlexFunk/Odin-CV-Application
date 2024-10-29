@@ -119,7 +119,7 @@ function EmploymentItem({ formInfo, formChange, id }) {
 
       <button
         className="deleteEmployment"
-        onClick={(evt) => {
+        onClick={() => {
           if (formInfo.employment.length > 1) {
             const newEmployment = [...formInfo.employment];
             newEmployment.splice(index, 1);
