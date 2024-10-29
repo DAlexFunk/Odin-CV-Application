@@ -1,30 +1,33 @@
 export default function EmploymentInfo({ formInfo, formChange }) {
   return (
-    <fieldset className="employmentInfo">
-      {formInfo.employment.map((employment) => (
-        <EmploymentItem
-          formInfo={formInfo}
-          formChange={formChange}
-          id={employment.id}
-        />
-      ))}
-
-      <button
-        className="newEmployment"
-        onClick={() => {
-          const newEmployment = [...formInfo.employment];
-          newEmployment.push({
-            company: "",
-            title: "",
-            startDate: "",
-            endDate: "",
-            description: "",
-            id: crypto.randomUUID(),
-          });
-          formChange({ ...formInfo, employment: newEmployment });
-        }}
-      >Add Employment</button>
-    </fieldset>
+    <section>
+      <label htmlFor="employmentInfo">Employment Info</label>
+      <fieldset id="employmentInfo">
+        {formInfo.employment.map((employment) => (
+          <EmploymentItem
+            formInfo={formInfo}
+            formChange={formChange}
+            id={employment.id}
+          />
+        ))}
+  
+        <button
+          className="newEmployment"
+          onClick={() => {
+            const newEmployment = [...formInfo.employment];
+            newEmployment.push({
+              company: "",
+              title: "",
+              startDate: "",
+              endDate: "",
+              description: "",
+              id: crypto.randomUUID(),
+            });
+            formChange({ ...formInfo, employment: newEmployment });
+          }}
+        >Add Employment</button>
+      </fieldset>
+    </section>
   );
 }
 
@@ -87,7 +90,7 @@ function EmploymentItem({ formInfo, formChange, id }) {
       <input
         className="jobEndDate"
         type="text"
-        placeholder="End Date"
+        placeholder="End Date (Present if current)"
         value={formInfo.employment[index].endDate}
         onChange={(evt) => {
           const newEmployment = [...formInfo.employment];

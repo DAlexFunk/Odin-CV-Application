@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: blue;
+  margin: 8px;
+}
+
+div#root {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 8px;
+}
+
+/* Form */
+form.inputForm {
+  background-color: white;
+  padding: 24px 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+form button {
+  position: relative;
+  width: 150px;
+  top: 1px;
+}
+
+fieldset {
+  border: none;
+}
+
+fieldset input {
+  font-family: inherit;
+}
+
+fieldset#personalInfo {
+  display: flex;
+  gap: 2px;
+}
+
+fieldset#educationInfo input {
+  margin: 0 2px 8px 0;
+}
+
+div.employment {
+  margin-bottom: 8px;
+
+  display: grid;
+  grid-template: 1fr 3fr / 1fr 1fr 1fr 1fr;
+  gap: 2px;
+}
+
+div.employment textarea {
+  resize: none;
+  font-family: inherit;
+  grid-area: 2 / 1 / 2 / 5;
+}
+
+/* CV */
+section.CV {
+  background-color: white;
+  min-height: 95vh;
+}

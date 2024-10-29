@@ -1,28 +1,31 @@
 export default function EducationInfo({ formInfo, formChange }) {
   return (
-    <fieldset className="educationInfo">
-      {formInfo.education.map((education) => (
-        <EducationItem
-          formInfo={formInfo}
-          formChange={formChange}
-          id={education.id}
-        />
-      ))}
-
-      <button
-        className="newEducation"
-        onClick={() => {
-          const newEducation = [...formInfo.education];
-          newEducation.push({
-            name: "",
-            graduation: "",
-            degree: "",
-            id: crypto.randomUUID(),
-          });
-          formChange({ ...formInfo, education: newEducation });
-        }}
-      >Add Education</button>
-    </fieldset>
+    <section>
+      <label htmlFor="educationInfo">Education Info</label>
+      <fieldset id="educationInfo">
+        {formInfo.education.map((education) => (
+          <EducationItem
+            formInfo={formInfo}
+            formChange={formChange}
+            id={education.id}
+          />
+        ))}
+  
+        <button
+          className="newEducation"
+          onClick={() => {
+            const newEducation = [...formInfo.education];
+            newEducation.push({
+              name: "",
+              graduation: "",
+              degree: "",
+              id: crypto.randomUUID(),
+            });
+            formChange({ ...formInfo, education: newEducation });
+          }}
+        >Add Education</button>
+      </fieldset>
+    </section>
   );
 }
 
