@@ -15,7 +15,7 @@ export default function CV({ formInfo }) {
         <hr />
         {education.map((educationItem) => {
           return (
-            <div className="educationItem">
+            <div className="educationItem" key={educationItem.id}>
               <h2>{educationItem.name}</h2>
               <p>{educationItem.graduation}</p>
               <p>{educationItem.degree}</p>
@@ -29,7 +29,7 @@ export default function CV({ formInfo }) {
         <hr />
         {employment.map((employmentItem) => {
           return (
-            <div className="employmentItem">
+            <div className="employmentItem" key={employmentItem.id}>
               <h2>
                 {employmentItem.company && employmentItem.title
                   ? `${employmentItem.company} | ${employmentItem.title}`

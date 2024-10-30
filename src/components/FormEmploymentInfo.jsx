@@ -8,6 +8,7 @@ export default function EmploymentInfo({ formInfo, formChange }) {
             formInfo={formInfo}
             formChange={formChange}
             id={employment.id}
+            key={employment.id}
           />
         ))}
   

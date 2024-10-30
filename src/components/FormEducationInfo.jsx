@@ -8,6 +8,7 @@ export default function EducationInfo({ formInfo, formChange }) {
             formInfo={formInfo}
             formChange={formChange}
             id={education.id}
+            key={education.id}
           />
         ))}
   
