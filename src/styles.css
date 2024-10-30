@@ -59,9 +59,8 @@ fieldset input {
   font-family: inherit;
 }
 
-fieldset#personalInfo {
-  display: flex;
-  gap: 2px;
+div.education button {
+  height: fit-content;
 }
 
 fieldset#educationInfo input {
@@ -124,4 +123,35 @@ div.employmentItem h2 + p {
 
 div.employmentItem p:last-child {
   grid-area: 2 / 1 / 2 / 3;
+}
+
+@media (max-width: 1100px) {
+  div#root {
+    display: flex;
+    flex-direction: column;
+  }
+
+  fieldset#personalInfo,
+  fieldset#educationInfo div.education,
+  fieldset#employmentInfo div.employment {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2px;
+  }
+
+  fieldset#employmentInfo div.employment {
+    grid-template-rows: 1fr;
+  }
+
+  div.employment textarea {
+    grid-area: 5 / 1 / 5 / 1;
+  }
+
+  fieldset#educationInfo div.education {
+    margin-bottom: 18px;
+  }
+
+  fieldset#educationInfo input {
+    margin: 0;
+  }
 }
